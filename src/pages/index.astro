@@ -1,11 +1,71 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import graphic from '../assets/retro-graphic.svg';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<div class="center">
+<h1 class="title">bunch<br>.codes</h1>
+	<img class="retro" id="background" src={graphic.src} alt="" fetchpriority="high" />
+	</div>
 </Layout>
+
+<style>
+.center {
+	display: grid;
+	place-items: center;
+	min-height: 100dvh;
+}
+h1.title {
+	font-family: 'Kanit', sans-serif;
+	font-weight: 600;
+  font-size: 10rem;
+	line-height: 8rem;
+  color: rgba(255,255,255,.95);
+	cursor:	default;
+}
+
+.large {
+	min-width: 20rem;
+	min-height: 20rem;
+}
+
+.retro {
+	width: 30rem;
+	max-width: 90dvw;
+}
+
+.card {
+	background-color: rgba(0,0,0,.8); /* Black background */
+	color: #ddd;
+  border-radius: 80px; /* Large rounded corners */
+  border: 4px solid transparent; /* Transparent border to allow for gradient */
+  padding: 4rem; /* Inner spacing */
+  box-shadow: 0 0 95px -5px rgba(211, 211, 211, 0.5); /* Outer glow effect */
+  position: relative; /* Needed for the gradient border */
+  overflow: hidden; /* Ensures rounded corners clip content */
+	transition: .6s ease-in-out box-shadow;
+}
+
+/* Gradient border using a pseudo-element */
+.card::before {
+  content: '';
+  position: absolute;
+  top: -4px; /* Offset to align with the border */
+  left: -4px; /* Offset to align with the border */
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(to bottom right, lightgray, darkgray); /* Gradient */
+  border-radius: 84; /* Slightly larger to account for the border */
+  z-index: -1; /* Place behind the card content */
+}
+
+/* Optional: Add hover effect for interactivity */
+.card:hover {
+  box-shadow: 0 0 95px 0px rgba(211, 211, 211, 0.7); /* Enhanced glow on hover */
+}
+
+</style>
