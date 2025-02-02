@@ -1,15 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import graphic from '../assets/retro-graphic.svg';
+import { getCollection } from 'astro:content';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const posts =(
+	await getCollection("blog"))
+.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <Layout>
 	<div class="center">
 <h1 class="title">bunch<br>.codes</h1>
 	<img class="retro" id="background" src={graphic.src} alt="" fetchpriority="high" />
+	<div class="posts">{
+		posts.map((post)=>(
+		<div class="post-box">
+			<a class="post-link" href={`/blog/${post.id}`}><h2>{post.data.title}</h2></a>
+		</div>
+		))
+		}</div>
 	</div>
 </Layout>
 
@@ -18,11 +27,12 @@ import graphic from '../assets/retro-graphic.svg';
 	display: grid;
 	place-items: center;
 	min-height: 100dvh;
+	gap: 1rem;
 }
 h1.title {
 	font-family: 'Kanit', sans-serif;
 	font-weight: 600;
-  font-size: 10rem;
+  font-size: 8em;
 	line-height: 8rem;
   color: rgba(255,255,255,.95);
 	cursor:	default;
@@ -35,7 +45,32 @@ h1.title {
 
 .retro {
 	width: 30rem;
-	max-width: 90dvw;
+	max-width: 80dvw;
+}
+
+.posts {
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	min-width: 20em;
+}
+
+a.post-link, a.post-link:link, a.post-link:visited {
+	color: rgba(255,255,255, 0.8);;
+	text-decoration: none;
+}
+
+a.post-link:hover {
+	color: rgba(255,255,255, 0.95);
+}
+
+.post-box:first-child {
+	border-top: solid 2px rgba(255,255,255, 0.85);
+}
+
+.post-box {
+	width: 100%;
+	border-bottom: solid 2px rgba(255,255,255, 0.85);
 }
 
 .card {
