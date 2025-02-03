@@ -19,7 +19,9 @@ const { Content } = await render(post);
     <div class="wrapper">
       <a href="/">&lt;back</a>
       <h1>{post.data.title}</h1>
-      <p>{post.data.pubDate.toLocaleDateString()}</p>
+      <small>published: {post.data.pubDate.toLocaleDateString()}</small>
+      {post.data.updatedDate && <small>updated: {post.data.updatedDate.toLocaleDateString()}</p>}
+{post.data.tags && <p class="tags">{post.data.tags.map((tag)=>(<a href={"/tags/"+tag}>#{tag} </a>))}</p>}
       <Content />
     </div>
   </div>
@@ -35,4 +37,9 @@ const { Content } = await render(post);
   padding: 1rem;
   border-radius: 18px;
 }
+
+.wrapper > * {
+  margin-block: 0;
+}
+
 </style>
