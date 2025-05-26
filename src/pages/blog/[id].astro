@@ -19,9 +19,9 @@ const { Content } = await render(post);
     <div class="wrapper">
       <a href="/">&lt;back</a>
       <h1>{post.data.title}</h1>
-      <small>published: {post.data.pubDate.toLocaleDateString()}</small>
-      {post.data.updatedDate && <small>updated: {post.data.updatedDate.toLocaleDateString()}</p>}
-{post.data.tags && <p class="tags">{post.data.tags.map((tag)=>(<a href={"/tags/"+tag}>#{tag} </a>))}</p>}
+      <small>pubDate: {post.data.pubDate.toLocaleDateString()}</small>
+      {post.data.updatedDate && (<small>updated: {post.data.updatedDate.toLocaleDateString()}</small>)}
+      {post.data.tags && (<p class="tags">{post.data.tags.map((tag)=>(<a href={"/tags/"+tag}>#{tag} </a>))}</p>)}
       <Content />
     </div>
   </div>
@@ -36,6 +36,7 @@ const { Content } = await render(post);
   z-index: 99;
   padding: 1rem;
   border-radius: 18px;
+  background-color: #99EECC21;
 }
 
 .wrapper > * {
