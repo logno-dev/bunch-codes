@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  let tags = []
+  posts.forEach((post)=>{
+    post.data.tags.forEach((tag)=> tags.push({params: {tag: tag}}))
+  })
+  return tags
+}
+
+const {tag} = Astro.params;
+const posts =(await getCollection("blog", ({data})=> data.tags.includes(tag)))
+.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).filter((a)=> a.data.draft === false)
+---
+
+<Layout>
+  <div class="center">
+    <div class="wrapper">
+      <a href="javascript:window.history.back();">&lt;back</a>
+      <h1>Posts with Tag: {tag}</h1>
+      <div class="posts">{
+        posts.map((post)=>(
+<hr />
+        <a class="post-link" href={`/blog/${post.id}`}>
+          <div class="post-box">
+            <h2 class="post-title">{post.data.title}</h2>
+            <small>pubDate: {post.data.pubDate.toLocaleDateString()}</small>
+            <p>{post.body.slice(0,100)}...</p>
+          </div>
+        </a>
+        ))
+        }</div>
+    </div>
+  </div>
+</Layout>
+
+
+<style>
+.wrapper {
+  /* place-content: center; */
+  display: grid;
+  gap: 1rem;
+  width: 40em;
+  max-width: 90dvw;
+  z-index: 99;
+  padding: 2rem;
+  border-radius: 18px;
+  background-color: #99EECC12;
+}
+
+.wrapper > * {
+  margin-block: 0;
+}
+
+h1 {
+  color: #ffffff89;
+}
+
+</style>

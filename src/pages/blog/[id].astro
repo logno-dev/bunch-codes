@@ -17,7 +17,7 @@ const { Content } = await render(post);
 <Layout>
   <div class="center">
     <div class="wrapper">
-      <a href="/">&lt;back</a>
+      <a href="javascript:window.history.back();">&lt;back</a>
       <h1>{post.data.title}</h1>
       <small>pubDate: {post.data.pubDate.toLocaleDateString()}</small>
       {post.data.updatedDate && (<small>updated: {post.data.updatedDate.toLocaleDateString()}</small>)}
