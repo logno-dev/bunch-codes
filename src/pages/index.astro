@@ -14,11 +14,9 @@ const posts =(
 	<img class="retro" id="background" src={graphic.src} alt="" fetchpriority="high" />
 	<div class="posts">{
 		posts.map((post)=>(
-		<a class="post-link" href={`/blog/${post.id}`}>
-		<div class="post-box">
+		<a class="post-link post-box" href={`/blog/${post.id}`}>
 					<h2 class="post-title">{post.data.title}</h2>
 					<small>pubDate: {post.data.pubDate.toLocaleDateString()}</small>
-		</div>
 </a>
 		))
 		}</div>
@@ -59,12 +57,15 @@ h1.title {
 }
 
 a.post-link, a.post-link:link, a.post-link:visited {
-	color: rgba(255,255,255, 0.8);;
+	color: rgba(255,255,255, 0.8);
 	text-decoration: none;
+  transition: color 0.4s ease, background-color 0.4s ease;
+  background-color: rgba(255,255,255, 0);
 }
 
 a.post-link:hover {
 	color: rgba(255,255,255, 0.95);
+  background-color: rgba(255,255,255, 0.1);
 }
 
 .post-title {
@@ -75,6 +76,7 @@ a.post-link:hover {
 .post-link {
 	width: 20em;
 	max-width: 90dvw;
+  padding-inline: 0.4rem;
 }
 
 .post-box:first-child {
