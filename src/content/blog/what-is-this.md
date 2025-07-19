@@ -7,8 +7,6 @@ tags: ["about","intro","introduction"]
 draft: false
 ---
 
-## What is this?
-
 If you've found this site and by extension this blog post, I am guessing I may have forced you to use something I've built and out of curiosity you went to check out the domain attached to it. Well, here you are, and there is nothing terribly exciting. Sorry about that.
 
 If you are genuinely curious about who I am and what I do, well, my name is Logan Bunch and I am trying to be a software developer. I have entered the field relatively late, so for my age, I am not the expert in the field that I would have liked to be, but I'm working to get there. I am eager to learn, and I primarily learn by building.
