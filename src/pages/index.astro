@@ -29,7 +29,7 @@ const posts =(
 .center {
 	display: grid;
 	place-items: center;
-	min-height: 100dvh;
+  height: 100%;
 	gap: 1rem;
 }
 h1.title {
@@ -114,6 +114,20 @@ a.post-link:hover {
 /* Optional: Add hover effect for interactivity */
 .card:hover {
   box-shadow: 0 0 95px 0px rgba(211, 211, 211, 0.7); /* Enhanced glow on hover */
+}
+
+@media (max-width: 500px) {
+  h1.title {
+    font-size: 6rem;
+    line-height: 4rem;
+  }
+  .retro {
+    width: 20rem;
+    max-width: 90dvw;
+  }
+  .posts {
+    min-width: 15em;
+  }
 }
 
 </style>

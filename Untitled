@@ -1,0 +1,17 @@
+_  transition: text-shadow 0.3s ease, color 0.3s ease;_@media (max-width: 600px) {
+  p {
+    font-size: 1em;
+  }
+}_@media (max-width: 600px) {
+  .title {
+    font-size: 4em;
+    line-height: 4rem;
+  }
+  .retro {
+    width: 20rem;
+    max-width: 90dvw;
+  }
+  .posts {
+    min-width: 15em;
+  }
+}

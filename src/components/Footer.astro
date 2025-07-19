@@ -6,10 +6,15 @@ const year = new Date().getFullYear()
 footer {
 	display: grid;
 	place-items: center;
-	padding: 10rem 0;
+	padding: 6rem 0;
 }
 p {
 	font-size: 1.2em;
 	color: rgba(255,255,255, 0.7);
+}
+@media (max-width: 500px) {
+  p {
+    font-size: 1em;
+  }
 }
 </style>
