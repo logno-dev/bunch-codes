@@ -2,7 +2,7 @@
 title: "Dot Files"
 description: "I think I have finally solved dotfiles"
 pubDate: "July 31, 2025"
-updatedDate: ""
+# updatedDate: ""
 tags: ["dotfiles","linux","macos", "nerd", "organization", "custom", "software"]
 draft: false
 ---
