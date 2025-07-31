@@ -14,6 +14,9 @@ importers:
       astro:
         specifier: ^5.12.0
         version: 5.12.0(@types/node@24.0.14)(rollup@4.45.1)(typescript@5.7.3)
+      lucide-astro:
+        specifier: ^0.535.0
+        version: 0.535.0(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(typescript@5.7.3))
 
 packages:
 
@@ -916,6 +919,11 @@ packages:
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
+
+  lucide-astro@0.535.0:
+    resolution: {integrity: sha512-xX3HG69FjxoIR5xIpCox6kK5ao5f01vms2ABJI81N785Du6AiEEEOv2ucCOxbi6SAVsHOnMJ40Lsc6XefbsI3w==}
+    peerDependencies:
+      astro: '>=2.7.1'
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -2606,6 +2614,10 @@ snapshots:
   longest-streak@3.1.0: {}
 
   lru-cache@10.4.3: {}
+
+  lucide-astro@0.535.0(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(typescript@5.7.3)):
+    dependencies:
+      astro: 5.12.0(@types/node@24.0.14)(rollup@4.45.1)(typescript@5.7.3)
 
   magic-string@0.30.17:
     dependencies:

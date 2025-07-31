@@ -15,6 +15,9 @@ const blog = defineCollection({
       .or(z.date())
       .transform((val) => new Date(val))
       .optional(),
+    pinned: z
+      .boolean()
+      .optional(),
     tags: z.array(z.string()).optional(),
     draft: z.boolean(),
   }),

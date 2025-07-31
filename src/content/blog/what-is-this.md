@@ -5,6 +5,7 @@ pubDate: "July 18, 2025"
 # updatedDate: "February 2, 2025"
 tags: ["about","intro","introduction"]
 draft: false
+pinned: true
 ---
 
 If you've found this site and by extension this blog post, I am guessing I may have forced you to use something I've built and out of curiosity you went to check out the domain attached to it. Well, here you are, and there is nothing terribly exciting. Sorry about that.

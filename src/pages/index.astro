@@ -2,17 +2,31 @@
 import Layout from '../layouts/Layout.astro';
 import graphic from '../assets/retro-graphic.svg';
 import { getCollection } from 'astro:content';
+import { Pin } from 'lucide-astro'
 
 const posts =(
 	await getCollection("blog"))
-.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).filter((a)=> a.data.draft === false);
+.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).filter((a)=> a.data.draft === false && a.data.pinned !== true);
+
+const pinned =(
+	await getCollection("blog"))
+.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).filter((a)=> a.data.draft === false && a.data.pinned === true);
 ---
 
 <Layout>
 	<div class="center">
 <h1 class="title">bunch<br>.codes</h1>
 	<img class="retro" id="background" src={graphic.src} alt="" fetchpriority="high" />
-	<div class="posts">{
+    <div class="posts">
+{
+		pinned.map((post)=>(
+		<a class="post-link post-box" href={`/blog/${post.id}`}>
+<h2 class="post-title between">{post.data.title}<Pin /></h2>
+					<small>pubDate: {post.data.pubDate.toLocaleDateString()}</small>
+</a>
+		))
+		}
+      {
 		posts.map((post)=>(
 		<a class="post-link post-box" href={`/blog/${post.id}`}>
 					<h2 class="post-title">{post.data.title}</h2>
@@ -47,6 +61,12 @@ h1.title {
 .retro {
 	width: 30rem;
 	max-width: 80dvw;
+}
+
+.between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .posts {
