@@ -7,7 +7,7 @@ draft: false
 pinned: false
 ---
 
-I guess I intended for this to be blog focused on my technical endeavors, but I will make an exception here.
+I guess I intended for this to be a blog focused on my technical endeavors, but I will make an exception here.
 
 I lost my mom on December 28, 2025. It was December 26 when I learned that she would not make it. The day after Christmas. My wife, my kids and I had visited her at the nursing home Christmas Day. We brought her gifts and a some freshly baked homemade cinnamon rolls. She was 73. She wasn't in the nursing home because of plain old age. She had been in and out of the hospital following a stroke that left her paralyzed on the left side about 2 months prior. The stroke caused by blood thinners she was taking because of clotting. Then a stroke caused by clots because the doctors took her off of the thinners that caused the initial stroke. Ultimately what took her was a hemorrhaging so severe her brain could no longer function. The pressure in her skull pushed her brain down onto her brain stem which handles the bodies basic functions like breathing, swallowing, living. The damage was permanent and all we could do was wait for her body to slowly give out.
 
