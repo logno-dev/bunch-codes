@@ -4,7 +4,7 @@ description: "I wanted to make an RPG, and I used AI to help me"
 pubDate: "December 3, 2025"
 # updatedDate: "February 2, 2025"
 tags: ["AI","RPG"]
-draft: false
+draft: true
 pinned: false
 ---
 

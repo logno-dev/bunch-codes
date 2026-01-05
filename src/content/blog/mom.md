@@ -4,6 +4,7 @@ description: "I love you"
 pubDate: "January 5, 2026"
 tags: ["mom"]
 draft: false
+pinned: false
 ---
 
 I guess I intended for this to be blog focused on my technical endeavors, but I will make an exception here.
