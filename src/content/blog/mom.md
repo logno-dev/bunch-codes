@@ -1,5 +1,5 @@
 ---
-title: "To Mom"
+title: "For Mom"
 description: "I love you"
 pubDate: "January 5, 2026"
 tags: ["mom"]
